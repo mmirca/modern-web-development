@@ -16,8 +16,301 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+          <h1>Frontend<br>del s.XXI</h1>
+          <p>En 2023 tenemos cohetes reutilizables, inteligencia artificial y... muchos pero que muchos frameworks JS</p>
+        </section>
+
+				<section>
+          <section>¿Cuál es el objetivo?</section>
+          <section>
+            <p>Entender todo el <a href="https://stateofjs.com/en-US" target="_blank">ecosistema web</a> moderno</p>
+            <img src="imgs/js_galaxy_2023.png" width="50%">
+            <small>y por el camino descubrir los conceptos clave que <br>un buen desarrollador frontend debe conocer en 2023!</small>
+          </section>
+          <section>
+            <div class="row">
+              <div class="col-6">
+                <img src="imgs/js_galaxy_2023.png">
+              </div>
+              <div class="col-6 txt-left">
+                <p>Para esto tendremos <br>que cubrir</p>
+                <ul>
+                  <li>Frameworks</li>
+                  <li>Librerías</li>
+                  <li>Runtimes</li>
+                  <li>Testing</li>
+                  <li>Bundlers</li>
+                  <li>... de todo un poco</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <h2>Pero...<br>empecemos por lo básico</h2>
+          <p>Porque lo importante no es la herramienta que utilizamos sino el resultado final</p>
+          <small>(Que no nos pasen <a href="https://precio.mapfre.es/calcular-seguros-coche/codigo-postal?tipoVeh=1&origen=SEMDIS&PPPO=MINTER&flujo=fq" target="_blank">cosas asi</a>...)</small>
+        </section>
+
+        <section>
+          <section>
+            <h2>HTML</h2>
+            <div class="row">
+              <div class="col-6">
+                <img src="imgs/mooncake-calm.webp">
+              </div>
+              <div class="col-6">
+                <iframe src="https://giphy.com/embed/toqGXGMk83wGeLBuvk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <p>Es sencillo y parece inofensivo</p>
+              </div>
+              <div class="col-6">
+                <p>Pero la semántica marca profudamente el proyecto</p>
+              </div>
+          </section>
+          <section>
+            <h2>Una sola palabra</h2>
+            <p>Sencillo VS ¿¿??</p>
+            <div class="row">
+              <div class="col-6">
+                <pre class="m-0"><code data-trim data-noescape>
+                  <script type="text/template">
+                    <button id="button">
+                      Mi boton
+                    </button>
+                  </script>
+                </code></pre>
+              </div>
+              <div class="col-6">
+                <pre class="m-0"><code data-trim data-noescape>
+                  <script type="text/template">
+                    <div id="button">
+                      Mi boton
+                    </div>
+                  </script>
+                </code></pre>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 txt-left">
+                <p>Simplemente funciona</p>
+              </div>
+              <div class="col-6 txt-left">
+                <p>200 lineas de codigo custom para solucionar problemas de</p>
+                <ul>
+                  <li>foco automatico</li>
+                  <li>pistas para voice over</li>
+                  <li>acciones por teclado</li>
+                  <li>etc.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h2>Accesibilidad</h2>
+            <p>Engloba los problemas mencionados</p>
+            <small>Es incluso una potencial fuente de demandas en sectores como el financiero</small>
+            <p>Simplemente utilizando las etiquetas correctas evitamos tener que aprendernos tooodo <br><a href="https://www.w3.org/WAI/standards-guidelines/wcag/glance/es" target="_blank">el estándar WCAG</a></p>
+          </section>
+          <section>
+            <h2>It's dangerous out there</h2>
+            <img src="imgs/profesor-oak.jpeg">
+            <p>Take one of these with you</p>
+          </section>
+          <section>
+            <h2>Estructura</h2>
+            <p>Independientemente de la tecnología</p>
+            <p>
+              <b>SIEMPRE</b> dividimos la página en
+            </p>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <header>
+                  <p>Encabezado</p>
+                </header>
+              </script>
+            </code></pre>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <main>
+                  <p>Contenido principal</p>
+                </main>
+              </script>
+            </code></pre>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <aside>
+                  <p>Contenido auxiliar</p>
+                </aside>
+              </script>
+            </code></pre>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <footer>
+                  <p>Sitemaps, disclaimers, etc.</p>
+                </footer>
+              </script>
+            </code></pre>
+          </section>
+          <section>
+            <h2>Acciones</h2>
+            <p>El usuario principalmente puede interactuar con</p>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <form>
+                  <input value="Elementos de formulario">
+                </form>
+              </script>
+            </code></pre>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <button>Botones</button>
+              </script>
+            </code></pre>
+            <pre><code data-trim data-noescape>
+              <script type="text/template">
+                <a href="#ref">Enlaces</a>
+              </script>
+            </code></pre>
+            <p>Hay que intentar siempre traducir el lenguaje visual a estos elementos</p>
+          </section>
+          <section>
+            <h2>Elementos muy utiles</h2>
+            <table class="w-100">
+              <thead>
+                <tr>
+                  <th>Elemento</th>
+                  <th>Demo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="">Dialog</td>
+                  <td>
+                    <div>
+                      <dialog id="a11y-example-dialog">
+                        <p>Mi modal nativa sin problemas de accesibilidad</p>
+                        <button id="a11y-example-dialog-close-button" class="btn">Cerrar</button>
+                      </dialog>
+                      <button id="a11y-example-dialog-open-button" class="btn">Abrir modal</button>
+                      <script>
+                        (function() {
+                          const $openDialogButton = document.getElementById('a11y-example-dialog-open-button');
+                          const $closeDialogButton = document.getElementById('a11y-example-dialog-close-button');
+                          const $dialog = document.getElementById('a11y-example-dialog-button');
+                          
+                          $openDialogButton.onclick = () => {
+                            document.getElementById('a11y-example-dialog').showModal()
+                          }
+                          $closeDialogButton.onclick = () => {
+                            document.getElementById('a11y-example-dialog').close()
+                          }
+                        })()
+                      </script>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Details</td>
+                  <td>
+                    <details>
+                      <summary>Titulo colapsable</summary>
+                      <p>Contenido</p>
+                    </details>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Progress</td>
+                  <td>
+                    <label for="file">Downloading progress:</label>
+                    <progress id="file" value="32" max="100"> 32% </progress>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="txt-left">
+              y muchos <a href="https://www.w3schools.com/tags/default.asp" target="_blank">más elementos</a>...
+            </p>
+          </section>
+          <section>
+            <p>Además una buena semántica favorece que la app se pueda ejecutar en todo tipo de dispotivos <br> <small>(No solo existen los smartphones)</small></p>
+            <img src="imgs/most-popular-electronics.webp">
+          </section>
+          <section>
+            <p>También ayudará a que el SEO de la aplicación parta de una buena base</p>
+          </section>
+          <section>
+            <h2>¿Cómo lo logramos?</h2>
+            <ol>
+              <li>Primero maquetamos el HTML, sin estilos ni funcionalidad</li>
+              <li>Lo validamos con herramientas como <a href="https://validator.w3.org/" target="_blank">W3C validator</a></li>
+              <li>Sobre una buena base añadimos las siguientes capas...</li>
+            </ol>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>CSS</h2>
+            <p>Queremos aplicaciones con estilo pero...</p>
+            <iframe src="https://giphy.com/embed/3o6MbmlLpnoJUVU5oc" width="480" height="366" frameBorder="0" class="giphy-embed"></iframe>
+            <p>No tenemos paciencia para dejarlas cargar</p>
+          </section>
+          <section>
+            <p>2s de carga = 10% tiempo total</p>
+            <small>Es normal para un usuario abandonar la página en <br>los primeros 20 segundos</small>
+          </section>
+          <section>
+            <h2>CSS es bloqueante</h2>
+            <p>
+              La aplicación no se renderiza hasta que no ha descargado y procesado los estilos
+            </p>
+            <p>Es la primera capa que tiene un impacto en las métricas <a href="https://web.dev/articles/vitals" target="_blank">Web Vitals</a> de una aplicación</p>
+          </section>
+          <section>
+            <p>LCP</p>
+            <small>¿Cuánto tardamos en enseñar algo relevante al usuario y como podemos ser más rápidos?</small>
+            <img src="imgs/chrome-coverage-debugger.png">
+          </section>
+          <section>
+            <p>CLS</p>
+            <small>¿Cómo de estable es el contenido de la página?</small>
+            <a href="https://defaced.dev/tools/layout-shift-gif-generator/" target="_blank">
+              <img src="imgs/capgemini-layout-shift.gif" style="max-height: 30vh">
+              <small>Generated with defaced.dev</small>
+            </a>
+          </section>
+          <section>
+            <h2>CLS (Cumulative Layout Shift)</h2>
+            <p>Largest Contentful Paint</p>
+            <p>Cumulative Layout Shift</p>
+          </section>
+        </section>
+        <section>
+          <h2>CSS</h2>
+          <p></p>
+          <p>Ya es complejo de por si</p>
+          <p>¿Cuanto cuesta el CSS?</p>
+          <p>above the fold, optimizaciones, aqui empezamos a tomar decisiones</p>
+          <p>En frameworks tenemos problemas adicionales (al tener muchisimo CSS) como encapsulamiento</p>
+          <p>Diferentes estrategias</p>
+          <ul>
+            <li>Encapsulamiento emulado</li>
+            <li>Shadow DOM</li>
+            <li>CSS in JS</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>JS</h2>
+          <p>nuestro ultimo recurso!</p>
+        </section>
 			</div>
 		</div>
 

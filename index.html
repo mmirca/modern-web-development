@@ -39,7 +39,6 @@
                   <li>Frameworks</li>
                   <li>Librerías</li>
                   <li>Runtimes</li>
-                  <li>Testing</li>
                   <li>Bundlers</li>
                   <li>... de todo un poco</li>
                 </ul>
@@ -49,8 +48,18 @@
         </section>
 
         <section>
-          <h2>Pero...<br>empecemos por lo básico</h2>
-          <p>Porque lo importante no es la herramienta que utilizamos sino el resultado final</p>
+          <h2>Pero...<br>empecemos por el principio</h2>
+          <p>¿Nos conocemos un poco mejor?</p>
+          <div>
+            <img src="imgs/qr-code-edm-frontend.png" style="max-height: 20vh">
+          </div>
+          <a href="https://forms.office.com/e/VkkcfF7GGi">https://forms.office.com/e/VkkcfF7GGi</a>
+        </section>
+
+        <section>
+          <h2>Empezamos 🚀</h2>
+          <p>Hay 1000 opciones para empezar a desarrollar pero tenemos que recordar siempre </p>
+          <p>Lo importante no es la herramienta que utilizamos sino el resultado final</p>
           <small>(Que no nos pasen <a href="https://precio.mapfre.es/calcular-seguros-coche/codigo-postal?tipoVeh=1&origen=SEMDIS&PPPO=MINTER&flujo=fq" target="_blank">cosas asi</a>...)</small>
         </section>
 
@@ -248,10 +257,54 @@
           <section>
             <h2>¿Cómo lo logramos?</h2>
             <ol>
-              <li>Primero maquetamos el HTML, sin estilos ni funcionalidad</li>
-              <li>Lo validamos con herramientas como <a href="https://validator.w3.org/" target="_blank">W3C validator</a></li>
-              <li>Sobre una buena base añadimos las siguientes capas...</li>
+              <li>Primero maquetamos el HTML<br>(sin estilos ni funcionalidad)</li>
+              <li>Lo validamos <a href="https://validator.w3.org/" target="_blank">W3C validator</a></li>
+              <li>Añadimos las siguientes capas: CSS y JS</li>
             </ol>
+          </section>
+          <section>
+            <h2>¿Muy básico?</h2>
+            <p>
+              <b>Si, extramadamente básico.</b>
+            </p>
+            <small>(os sorprendería la cantidad de proyectos que no tienen una buena base)</small>
+            <p>Estan sugiendo cada vez más iniciativas como<br> <a href="https://html-first.com/" target="_blank">HTML First</a> para reivindicar la importancia de HTML en el desarrollo frontend</p>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2><a href="https://htmx.org/" target="_blank">HTMX</a></h2>
+            <p>La sencillez de hacer las cosas bien</p>
+            <pre><code data-trim data-noescape class="txt-center">
+              <script type="text/template">
+                <button hx-post="/posts">Click me</button>
+              </script>
+            </code></pre>
+            <p>Aporta interactividad sobre HTML <br>utilizando atributos "hx-"</p>
+            <small>45kB (15kB gzip)</small>
+            <aside class="notes">
+              <p><a href="https://www.builder.io/blog/htmx-vs-react" target="_blank">HTMX vs React</a></p>
+            </aside>
+          </section>
+          <section>
+            <h2>Instalación</h2>
+            <p>Simplemente añadimos el script a un documento HTML</p>
+            <pre><code data-trim data-noescape class="txt-center">
+              <script type="text/template">
+                <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+              </script>
+            </code></pre>
+          </section>
+          <section>
+            <h2>¿Qué puede hacer?</h2>
+            <ul>
+              <li>Modificar partes del documento dinámicamente</li>
+              <li>Cualquier peticion HTTP</li>
+            </ul>
+          </section>
+          <section>
+            <h2>¿Muy sencillo?</h2>
+            <p><a href="/demos/htmx" target="_blank">Veamoslo en acción</a></p>
           </section>
         </section>
 
@@ -287,29 +340,81 @@
             </a>
           </section>
           <section>
-            <h2>CLS (Cumulative Layout Shift)</h2>
-            <p>Largest Contentful Paint</p>
-            <p>Cumulative Layout Shift</p>
+            <h2>Otros desafios</h2>
+            <p>En frameworks tenemos problemas adicionales (al tener muchisimo CSS) como encapsulamiento</p>
+            <ul>
+              <li>Encapsulamiento emulado</li>
+              <li>Shadow DOM</li>
+              <li>CSS in JS</li>
+            </ul>
           </section>
-        </section>
-        <section>
-          <h2>CSS</h2>
-          <p></p>
-          <p>Ya es complejo de por si</p>
-          <p>¿Cuanto cuesta el CSS?</p>
-          <p>above the fold, optimizaciones, aqui empezamos a tomar decisiones</p>
-          <p>En frameworks tenemos problemas adicionales (al tener muchisimo CSS) como encapsulamiento</p>
-          <p>Diferentes estrategias</p>
-          <ul>
-            <li>Encapsulamiento emulado</li>
-            <li>Shadow DOM</li>
-            <li>CSS in JS</li>
-          </ul>
         </section>
 
         <section>
-          <h2>JS</h2>
-          <p>nuestro ultimo recurso!</p>
+          <section>
+            <h2>JS</h2>
+            <p>nuestro ultimo recurso</p>
+            <p>su funcion es hacer la app interactiva, no pintar la app!</p>
+            <p>Atencion a las funcionalidades, caniuse</p>
+          </section>
+          <section>
+            <p>Puede ser bloqueante</p>
+            <p>Deberia ser hidratar algo existente de forma pregresiva</p>
+            <p>Un buen ejemplo gov.uk defra</p>
+          </section>
+          <section>
+            <p>CSR</p>
+            <p>Veniamos de hacer cosas en PHP, entramos en 100% cliente y el resultado...</p>
+            <p>Queremos seguir utilizando React, es muy potente, pero que hacemos?</p>
+          </section>
+          <section>
+            <p>SSR</p>
+            <p>Runtimes: node, bun, deno -> Necesitamos algo como express</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Bundlers</h2>
+            <p>Hacer todo esto a mano, es practicamente imposible</p>
+          </section>
+        </section>
+
+        <section>
+          <p>Descanso</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>1st gen frameworks</h2>
+            <p>CSR al poder! el objetivo es separar el front del servidor</p>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h2>2nd gen frameworks</h2>
+            <p>Vemos a pulir esto un poco...</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Gen 3 frameworks</h2>
+            <p>Trabajamos mejor pero... a que precio?</p>
+            <p>SSR es importante</p>
+            <p>Gatsby, hidratacion, etc.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Gen 4 frameworks</h2>
+            <p>Igual que gen 2 refinaba la primera, esta refina la 3.</p>
+            <p>Lo queremos todo y podemos tenerlo!</p>
+            <p>Qwik, astro, island architectures</p>
+            <p>Resumibility</p>
+          </section>
         </section>
 			</div>
 		</div>

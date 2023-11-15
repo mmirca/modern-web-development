@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTMX</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      box-sizing: border-box;
+      padding: 30px 50px;
+    }
+    img {
+      padding: 12px;
+    }
+  </style>
+</head>
+<body hx-headers='{"ngrok-skip-browser-warning": "69420"}'>
+  <header>
+    <h1>My Playlist</h1>
+  </header>
+  <main>
+    <article>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex;">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7b/80/e7/7b80e7c7-edfe-73f6-0c91-e332173020de/mzi.dypfgiki.jpg/100x100bb.jpg">
+          <div>
+            <h2>Imagine</h2>
+            <p>Jack Johnson</p>
+          </div>
+        </div>
+        <button
+          hx-get="https://comic-shark-meet.ngrok-free.app/255145362"
+          hx-swap="outerHTML"
+          hx-target="next .summary"
+          hx-on="click: openSummary(event)"
+          class="open-btn"
+        >
+          More info
+        </button>
+        <button hidden class="close-btn" hx-on="click: closeSummary(event)">Close</button>
+      </div>
+      <div class="summary"></div>
+    </article>
+    <hr>
+    <article>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex;">
+          <img src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6c/3a/c5/6c3ac504-80fb-a60f-0f9a-09da88b6b3fc/181229100723.jpg/100x100bb.jpg">
+          <div>
+            <h2>Flake</h2>
+            <p>Jack Johnson</p>
+          </div>
+        </div>
+        <button
+          hx-get="https://comic-shark-meet.ngrok-free.app/906900983"
+          hx-swap="outerHTML"
+          hx-target="next .summary"
+          hx-on="click: openSummary(event)"
+          class="open-btn"
+        >
+          More info
+        </button>
+        <button hidden class="close-btn" hx-on="click: closeSummary(event)">Close</button>
+      </div>
+      <div class="summary"></div>
+    </article>
+  </main>
+  
+
+  <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+  <script>
+    function openSummary(event) {
+      const $openButton = event.target;
+      const $closeButton = $openButton.closest('article').querySelector('.close-btn');
+
+      $openButton.setAttribute('hidden', 'true');
+      $closeButton.removeAttribute('hidden');
+    }
+
+    function closeSummary(event) {
+      const $closeButton = event.target;
+      const $openButton = $closeButton.closest('article').querySelector('.open-btn');
+      const $summary = $closeButton.closest('article').querySelector('.summary');
+
+      $closeButton.setAttribute('hidden', 'true');
+      $openButton.removeAttribute('hidden');
+      $summary.innerHTML = '';
+    }
+  </script>
+</body>
+</html>

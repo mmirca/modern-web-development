@@ -45,6 +45,11 @@
               </div>
             </div>
           </section>
+          <section>
+            <h2>Speedrun frontend</h2>
+            <iframe src="https://giphy.com/embed/yXPuErPgcf2Le" width="480" height="339" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>Nos pasamos el juego en 4 horas</p>
+          </section>
         </section>
 
         <section>
@@ -324,38 +329,84 @@
             <p>
               La aplicación no se renderiza hasta que no ha descargado y procesado los estilos
             </p>
+            <img src="imgs/lighthouse.png" height="100em">
             <p>Es la primera capa que tiene un impacto en las métricas <a href="https://web.dev/articles/vitals" target="_blank">Web Vitals</a> de una aplicación</p>
           </section>
           <section>
-            <p>LCP</p>
+            <p>Largest Contentful Paint (LCP)</p>
             <small>¿Cuánto tardamos en enseñar algo relevante al usuario y como podemos ser más rápidos?</small>
             <img src="imgs/chrome-coverage-debugger.png">
           </section>
           <section>
-            <p>CLS</p>
+            <p>Cumulative Layout Shift (CLS)</p>
             <small>¿Cómo de estable es el contenido de la página?</small>
             <a href="https://defaced.dev/tools/layout-shift-gif-generator/" target="_blank">
               <img src="imgs/capgemini-layout-shift.gif" style="max-height: 30vh">
               <small>Generated with defaced.dev</small>
             </a>
+            <aside class="notes">
+              <p>Cada estilo nuevo que carguemos, tarda y puede generar cambios en el layout</p>
+            </aside>
           </section>
           <section>
-            <h2>Otros desafios</h2>
-            <p>En frameworks tenemos problemas adicionales (al tener muchisimo CSS) como encapsulamiento</p>
-            <ul>
-              <li>Encapsulamiento emulado</li>
-              <li>Shadow DOM</li>
-              <li>CSS in JS</li>
-            </ul>
+            <h2>Complejidad creciente</h2>
+            <p>¿Cómo podemos mantener los archivos CSS? </p>
+            <p>¿Estamos condenados a archivos grandes que desaprovechamos?</p>
+          </section>
+          <section>
+            <h2>Encapsulamiento</h2>
+            <small>¿Cómo evitamos los conflictos en archivos CSS grandes?</small>
+            <p><a href="/demos/shadow-dom/" target="_blank">Nativo con Shadow DOM</a></p>
+            <p><a href="http://localhost:3000" target="_blank">Emulado con CSS Modules</a></p>
+          </section>
+          <section>
+            <h2>CSS in JS</h2>
+            <p>Ya podemos manejar archivos CSS grandes pero...</p>
+            <p>Tenemos que optimizar activamente el código para reducir el impacto en LCP y CLS</p>
+            <p><a href="http://localhost:3000" target="_blank">¿Podemos automatizar esto?</a></p>
+            <small>(desarrollado con <a href="https://emotion.sh/docs/introduction" target="_blank">emotion</a>)</small>
+          </section>
+          <section>
+            <h2>Treeshaking</h2>
+            <p>Las herramientas de bundling modernas son capaces de hacer treeshaking</p>
+            <pre class="m-0"><code data-trim data-noescape>
+              <script type="text/template">
+                function () {
+                  // La siguiente linea se elimina automaticamente
+                  const refSinUsar = 'valor';
+                  return 2 + 2;
+                }
+              </script>
+            </code></pre>
+            <p>Analizan el código, eliminan las partes que no utilizamos y juntan todos los mini archivos en uno solo</p>
+          </section>
+          <section>
+            <h2><a href="https://vitejs.dev/" target="_blank">Vite</a></h2>
+            <p>El que mayor traccion tiene en este momento*</p>
+            <pre><code data-trim data-noescape class="txt-center">
+              <script type="text/template">
+                npm init vite@latest
+              </script>
+            </code></pre>
+            <small>(utilizado para la demo de la slide anterior)</small>
+            <p>Aunque hay que estar muy atentos a <a href="https://bun.sh/" target="_blank">Bun</a></p>
+            <br>
+            <small>*Take with a grain of salt</small>
           </section>
         </section>
 
         <section>
           <section>
-            <h2>JS</h2>
-            <p>nuestro ultimo recurso</p>
+            <h2>JavaScript</h2>
+            <p>La última capa y com no... la más compleja</p>
+            <p>En este punto hay muchas cosas que pueden ir mal. Empezando por:</p>
+            <p>'1' + 1 = '11'</p>
+
             <p>su funcion es hacer la app interactiva, no pintar la app!</p>
             <p>Atencion a las funcionalidades, caniuse</p>
+          </section>
+          <section>
+            <h2>Typescript</h2>
           </section>
           <section>
             <p>Puede ser bloqueante</p>

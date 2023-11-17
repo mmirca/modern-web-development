@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .foo {
+      border: 1px solid red;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Shadow DOM</h2>
+  <p class="foo">this is an element with <code>.foo</code> class ON root document</p>
+  <my-custom-element></my-custom-element>
+  <my-custom-element-2></my-custom-element-2>
+  <script>
+    (function() {
+      class MyCustomElement extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({mode: 'open'});
+
+          const $link = document.createElement('link');
+          $link.href = './custom-style.css';
+          $link.rel = 'stylesheet';
+          this.shadowRoot.appendChild($link);
+
+          const $p = document.createElement('p');
+          $p.classList.add('foo');
+          $p.innerHTML = `this is an element with <code>.foo</code> class IN shadow DOM`;
+          this.shadowRoot.appendChild($p);
+        }
+        connectedCallback() {
+          console.log('Connected')
+        }
+      }
+
+      customElements.define('my-custom-element', MyCustomElement);
+    })()
+  </script>
+  <script>
+    (function() {
+      class MyCustomElement2 extends HTMLElement {
+        constructor() {
+          super();
+          
+          const $p = document.createElement('p');
+          $p.classList.add('foo');
+          $p.innerHTML = `this is an element with <code>.foo</code> class IN custom element WITHOUT Shadow DOM`;
+          this.appendChild($p);
+        }
+        connectedCallback() {
+          console.log('Connected')
+        }
+      }
+
+      customElements.define('my-custom-element-2', MyCustomElement2);
+    })()
+  </script>
+</body>
+</html>

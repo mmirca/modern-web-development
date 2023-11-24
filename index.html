@@ -275,8 +275,6 @@
             <small>(os sorprendería la cantidad de proyectos que no tienen una buena base)</small>
             <p>Estan sugiendo cada vez más iniciativas como<br> <a href="https://html-first.com/" target="_blank">HTML First</a> para reivindicar la importancia de HTML en el desarrollo frontend</p>
           </section>
-        </section>
-        <section>
           <section>
             <h2><a href="https://htmx.org/" target="_blank">HTMX</a></h2>
             <p>La sencillez de hacer las cosas bien</p>
@@ -310,6 +308,9 @@
           <section>
             <h2>¿Muy sencillo?</h2>
             <p><a href="/demos/htmx" target="_blank">Veamoslo en acción</a></p>
+            <aside class="notes">
+              <p>Rercodar meter el header para auth</p>
+            </aside>
           </section>
         </section>
 
@@ -341,7 +342,9 @@
             <p>Cumulative Layout Shift (CLS)</p>
             <small>¿Cómo de estable es el contenido de la página?</small>
             <a href="https://defaced.dev/tools/layout-shift-gif-generator/" target="_blank">
-              <img src="imgs/capgemini-layout-shift.gif" style="max-height: 30vh">
+              <div>
+                <img src="imgs/capgemini-layout-shift.gif" style="max-height: 40vh">
+              </div>
               <small>Generated with defaced.dev</small>
             </a>
             <aside class="notes">
@@ -350,14 +353,20 @@
           </section>
           <section>
             <h2>Complejidad creciente</h2>
-            <p>¿Cómo podemos mantener los archivos CSS? </p>
+            <p>¿Cómo podemos mantener los archivos CSS?</p>
             <p>¿Estamos condenados a archivos grandes que desaprovechamos?</p>
+            <aside class="notes">
+              <p>Vamos a ver los 2 puntos por separado a continuación</p>
+            </aside>
           </section>
           <section>
             <h2>Encapsulamiento</h2>
             <small>¿Cómo evitamos los conflictos en archivos CSS grandes?</small>
             <p><a href="/demos/shadow-dom/" target="_blank">Nativo con Shadow DOM</a></p>
             <p><a href="http://localhost:3000" target="_blank">Emulado con CSS Modules</a></p>
+            <aside class="notes">
+              <a href="https://vscode.dev/" target="_blank">VS code</a>
+            </aside>
           </section>
           <section>
             <h2>CSS in JS</h2>
@@ -398,73 +407,101 @@
         <section>
           <section>
             <h2>JavaScript</h2>
-            <p>La última capa y com no... la más compleja</p>
-            <p>En este punto hay muchas cosas que pueden ir mal. Empezando por:</p>
-            <p>'1' + 1 = '11'</p>
-
-            <p>su funcion es hacer la app interactiva, no pintar la app!</p>
-            <p>Atencion a las funcionalidades, caniuse</p>
+            <p>En este punto TODO puede ir mal</p>
+            <pre><code data-trim data-noescape class="txt-center">
+              <script type="text/template">
+                '1' + 1 // '11'
+                NaN === NaN; // false
+              </script>
+            </code></pre>
+            <iframe height="200em" src="https://giphy.com/embed/6EQzurED9q9uU" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>❤️ <a href="https://github.com/denysdovhan/wtfjs" target="_blank">Javascript</a></p>
           </section>
           <section>
             <h2>Typescript</h2>
+            <iframe src="https://giphy.com/embed/l3q2zbskZp2j8wniE" width="480" height="279" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>Si... algo bueno salió de Microsoft</p>
+            <p>Vamos a ver un <a href="https://www.typescriptlang.org/play?#code/PTAEBUE8AcFMGcBQiAuNagGIHtugLygDeioZoAlgCYBcoAdgK4C2ARrAE4Dcp5AbgEMANo1h14KDhXoBzHgF9k0lJwBmAgMYYAQgI7FeZanSZtOPcqEEixoCVNkLkIUAFF4oIXmYV4zPHAc3rAAVtj6aHAANKAIoMwCHqpCsAAeFKwpAHTIGtj0EqCquHQ4eIQklsagAExRhlbConQA5NaiLYiKzmAA8oECVOEIyJEYZa6pKvRUsFQEWLigAGQGlrMoAhRC4pLScl25+YXF2JPTs7SLZ1OwM3MLleTVdQ3ttm1NsC3167Cb21aGy2Qk63TGoF6PhQZQWUIoKAAPBNbvcqDEWsDti0AHw8RB5AooUDYaFlOjwmFLCoNF6-fhfVrvMGjdDXXocABy2BQAAt9gtYQAfBiMIRCfGEk64Dncvn7Uoyrk8-myBZMcX4xAudzYDwaRJ60CbejGu5UQbDDyzUDQfKcWJCUA0AT0SCoNkAWUg4AozFg2EYxMIACV-owOPQoHBEWNsKo7P9ff7AygcchtWAAOJ3TgUPJIRCqRj0DQoCj5Iq4TD0RHgHEAClOdHAAEo1uQOOHI1XsE4Ccdiap6GH4GLg72aw2iJQrgBGGoAZgALKB5K38cPR+OstQuKAXABhcJdssCf30FTGijQS12aSgWaqaQUfT0QYCDM6iQCUCQX-wBQoAAI6iLEHglp4FYxAIoFAXasy+NeHB6I+GCHryAgoFmAAK4DOq2rJwBA6C6PAcy9PQx4zAiFa1vWCz4WkFwePYAoAPyimY+h0KwuApK6kqDqAXZjkIKBzi2pGJBRVH5FQtH5IibGyDiCzLjU+4uKY7AcAORIiQg441FJcBkbJ1EKeWSk6ZwamEJIohaWAfHYAJ9D6YUonjoupmwOZVCUZZim1q57n2UUwjkc5oBhbAroZsgQA" target="_blank">ejemplo</a></p>
           </section>
           <section>
-            <p>Puede ser bloqueante</p>
-            <p>Deberia ser hidratar algo existente de forma pregresiva</p>
-            <p>Un buen ejemplo gov.uk defra</p>
+            <h2>Compatibilidad</h2>
+            <p>Más problemitas en JavaScript...</p>
+            <iframe src="https://giphy.com/embed/3og0INAY5MLmEBubyU" width="480" height="227" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>Cada navegador va a su ritmo</p>
+            <p><a href="https://caniuse.com/?search=await">caniuse.com</a> + <a href="https://babeljs.io/repl#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.21&spec=false&loose=false&code_lz=Q&debug=false&forceAllTransforms=false&modules=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=env%2Creact%2Cstage-2&prettier=false&targets=&version=7.23.3&externalPlugins=&assumptions=%7B%7D" target="_blank">Babel</a></p>
+            <small>Atentos a <a href="https://swc.rs/" target="_blank">SWC</a> también</small>
           </section>
           <section>
-            <p>CSR</p>
-            <p>Veniamos de hacer cosas en PHP, entramos en 100% cliente y el resultado...</p>
-            <p>Queremos seguir utilizando React, es muy potente, pero que hacemos?</p>
+            <h2>JS en exceso</h2>
+            <p>Debería hacerla app interactiva, no pintarla!</p>
+            <p>Este punto es el más crítico para Web Vitals</p>
+            <p>Un buen ejemplo <a href="https://www.builder.io/" target="_blank">builder.io</a></p>
           </section>
           <section>
-            <p>SSR</p>
-            <p>Runtimes: node, bun, deno -> Necesitamos algo como express</p>
+            <p>Client Side Rendering (CSR)</p>
+            <p>No hemos llegado a <a href="https://precio.mapfre.es/calcular-seguros-coche/codigo-postal?tipoVeh=1&origen=SEMDIS&PPPO=MINTER&flujo=fq" target="_blank">este punto</a> por capricho</p>
+            <iframe src="https://giphy.com/embed/cjyVveMCMgunS" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p>Todos los avances en el ecosistema JS han permitido romper los monolitos, separar el front del back</p>
+          </section>
+          <section>
+            <h2>Server Side Rendering (SSR)</h2>
+            <p>¿Es posible usar frameworks frontend sin añorar PHP?</p>
+            <p>Ahora tenemos soporte para SSR generalizado en</p>
+            <ul class="txt-left">
+              <li><a href="https://angular.io/guide/ssr" target="_blank">Angular</a> desde v17 mejor integrado</li>
+              <li><a href="https://react.dev/reference/react-dom/server" target="_blank">React</a> pionero en SSR</li>
+              <li><a href="https://vuejs.org/guide/scaling-up/ssr.html#nuxt" target="_blank">Vue</a> con Nuxt / Quasar</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Pero... ¿Funciona sin JS?</h2>
+            <p>Eso es! primero renderizamos un DOM estático</p>
+            <p>Luego le añadimos interactividad mediante un proceso de hidratación</p>
+            <p>Vamos a ver un <a href="http://localhost:3001" target="_blank">ejemplo con React</a></p>
+            <small>Generado con <a href="https://github.com/ljlm0402/typescript-express-starter" target="_blank">Typescript Express Starter</a></small>
+          </section>
+          <section>
+            <h2>Frameworks 3.0</h2>
+            <div class="txt-left">
+              <p>Tenemos frameworks planteados desde un inicio con SSR en mente</p>
+              <ul>
+                <li>Qwik - Resumability</li>
+                <li>Remix / Next - SSR con hidratación</li>
+                <li>Astro - <a href="https://docs.astro.build/es/concepts/islands/">Island Architecture</a></li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <h2>Hidratacion vs Resumability</h2>
+            <img src="imgs/resumability-vs-hydration.webp">
+            <small>Podéis leer más en <a href="https://qwik.builder.io/docs/concepts/resumable/" target="_blank">Qwik</a></small>
+          </section>
+          <section>
+            <h2>Qwik</h2>
+            <p>Vamos a ver una <a href="http://localhost:5173/" target="_blank">pequeña demo</a> de como funciona</p>
           </section>
         </section>
-
         <section>
           <section>
-            <h2>Bundlers</h2>
-            <p>Hacer todo esto a mano, es practicamente imposible</p>
+            <h2>Últimos debates en front</h2>
+            <div class="txt-left">
+              <p>React Server Components</p>
+              <small>Normalmente compartimos el bunlde entre cliente y servidor. React facilita una definición de componentes que se excluyen del bundle de cliente.</small>
+              <p>Signals</p>
+              <small>Se trata de modificar quirurjicamente el DOM. Guardar las referencias a los nodos y mutarlos sin necesidad de VDOM o zone.js</small>
+            </div>
           </section>
-        </section>
-
-        <section>
-          <p>Descanso</p>
-        </section>
-
-        <section>
           <section>
-            <h2>1st gen frameworks</h2>
-            <p>CSR al poder! el objetivo es separar el front del servidor</p>
-          </section>
-        </section>
-        
-        <section>
-          <section>
-            <h2>2nd gen frameworks</h2>
-            <p>Vemos a pulir esto un poco...</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Gen 3 frameworks</h2>
-            <p>Trabajamos mejor pero... a que precio?</p>
-            <p>SSR es importante</p>
-            <p>Gatsby, hidratacion, etc.</p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h2>Gen 4 frameworks</h2>
-            <p>Igual que gen 2 refinaba la primera, esta refina la 3.</p>
-            <p>Lo queremos todo y podemos tenerlo!</p>
-            <p>Qwik, astro, island architectures</p>
-            <p>Resumibility</p>
+            <h2>Next Steps</h2>
+            <div class="txt-left">
+              <small>Hemos visto un poco de todo pero hay mucho más. Algunos ejemplos:</small>
+              <p>Componentes Universales</p>
+              <small>Utilizando <a href="https://mitosis.builder.io/?outputTab=G4VwpkA%3D" target="_blank">Mitosis</a> podemos utilizar un mismo código fuente para múltiples frameworks</small>
+              <p>Web Components</p>
+              <small>Es un estándar web, lo hemos visto brevemenente con el shadow DOM en las demos anteriores pero hay <a href="https://github.com/mmirca/formacion-web-components" target="_blank">mucho más</a></small>
+              <p>Service Workers</p>
+              <small>Ya es un estándar, podemos descargar el hilo principal de JS pero no lo aprovechamos. Hay herramientas como <a href="https://partytown.builder.io/" target="_blank">Partytown</a> que buscan democratizar esto.</small>
+            </div>
           </section>
         </section>
 			</div>
